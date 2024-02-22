@@ -206,11 +206,11 @@ var URL = "";
     // Uniswap V2 Multicall
     // V2 Multicall Deployment
     console.log("Deploying Multicall now, please wait ...");
-    // let uniswapMulticall;
-    // uniswapMulticall = await web3.eth.sendTransaction({
-    //     from: accounts[2],
-    //     data: uniswapMulticallBytecode
-    // }); // Charlie accounts[2] is the owner
+    let uniswapMulticall;
+    uniswapMulticall = await web3.eth.sendTransaction({
+        from: accounts[2],
+        data: uniswapMulticallBytecode
+    }); // Charlie accounts[2] is the owner
     let uniswapMulticallInstance = new web3.eth.Contract(uniswapMulticallAbi, uniswapMulticall.contractAddress);
     uniswapMulticallInstance.deploy({
             data: uniswapMulticallBytecode
