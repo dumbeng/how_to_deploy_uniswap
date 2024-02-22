@@ -83,7 +83,7 @@ var URL = "";
         })
         .send({
             from: accounts[2],
-            gas: 4700000,
+            gas: 8000000,
             gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
@@ -125,7 +125,7 @@ var URL = "";
         })
         .send({
             from: accounts[2],
-            gas: 4700000,
+            gas: 8000000,
             gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
@@ -173,7 +173,7 @@ var URL = "";
         })
         .send({
             from: accounts[2],
-            gas: 4700000,
+            gas: 8000000,
             gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
