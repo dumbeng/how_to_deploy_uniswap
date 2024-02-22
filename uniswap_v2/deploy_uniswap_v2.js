@@ -209,7 +209,8 @@ var URL = "";
     let uniswapMulticall;
     uniswapMulticall = await web3.eth.sendTransaction({
         from: accounts[2],
-        data: uniswapMulticallBytecode
+        data: uniswapMulticallBytecode,
+        gas: 8000000
     }); // Charlie accounts[2] is the owner
     let uniswapMulticallInstance = new web3.eth.Contract(uniswapMulticallAbi, uniswapMulticall.contractAddress);
     uniswapMulticallInstance.deploy({
@@ -253,7 +254,7 @@ var URL = "";
         })
         .send({
             from: accounts[2],
-            gas: 4700000,
+            gas: 8000000,
             gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
@@ -289,7 +290,7 @@ var URL = "";
         })
         .send({
             from: accounts[2],
-            gas: 4700000,
+            gas: 8000000,
             gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
@@ -322,7 +323,7 @@ var URL = "";
         })
         .send({
             from: accounts[2],
-            gas: 4700000,
+            gas: 8000000,
             gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
