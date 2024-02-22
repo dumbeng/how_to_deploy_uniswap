@@ -77,7 +77,7 @@ var URL = "";
         data: uniswapV2Bytecode
     }); // Charlie accounts[2] is the owner
     let uniswapV2Instance = new web3.eth.Contract(uniswapV2Abi, uniswapV2.contractAddress);
-    uniswapV2Instance.deploy({
+    await uniswapV2Instance.deploy({
             data: uniswapV2Bytecode,
             arguments: [_feeToSetter]
         })
@@ -120,7 +120,7 @@ var URL = "";
         data: uniswapWETHBytecode
     }); // Charlie accounts[2] is the owner
     let uniswapWETHInstance = new web3.eth.Contract(uniswapWETHAbi, uniswapWETH.contractAddress);
-    uniswapWETHInstance.deploy({
+    await uniswapWETHInstance.deploy({
             data: uniswapWETHBytecode
         })
         .send({
@@ -167,7 +167,7 @@ var URL = "";
         data: uniswapRouterBytecode
     }); // Charlie accounts[2] is the owner
     let uniswapROUTER2Instance = new web3.eth.Contract(uniswapRouterAbi, uniswapROUTER2.contractAddress);
-    uniswapROUTER2Instance.deploy({
+    await uniswapROUTER2Instance.deploy({
             data: uniswapRouterBytecode,
             arguments: [data_object.contract_address.uniswap_v2, data_object.contract_address.weth]
         })
@@ -213,7 +213,7 @@ var URL = "";
         gas: 8000000
     }); // Charlie accounts[2] is the owner
     let uniswapMulticallInstance = new web3.eth.Contract(uniswapMulticallAbi, uniswapMulticall.contractAddress);
-    uniswapMulticallInstance.deploy({
+    await uniswapMulticallInstance.deploy({
             data: uniswapMulticallBytecode
         })
         .send({
@@ -248,7 +248,7 @@ var URL = "";
         data: uniswapMigratorBytecode
     }); // Charlie accounts[2] is the owner
     let uniswapMigratorInstance = new web3.eth.Contract(uniswapMigratorAbi, uniswapMigrator.contractAddress);
-    uniswapMigratorInstance.deploy({
+    await uniswapMigratorInstance.deploy({
             data: uniswapMigratorBytecode,
             arguments: [data_object.contract_address.uniswap_factory, data_object.contract_address.router]
         })
@@ -284,7 +284,7 @@ var URL = "";
         data: uniswapEnsRegistryBytecode
     }); // Charlie accounts[2] is the owner
     let uniswapEnsRegistryInstance = new web3.eth.Contract(uniswapEnsRegistryAbi, ensRegistry.contractAddress);
-    uniswapEnsRegistryInstance.deploy({
+    await uniswapEnsRegistryInstance.deploy({
             data: uniswapEnsRegistryBytecode,
             arguments: [accounts[2]]
         })
@@ -318,7 +318,7 @@ var URL = "";
         data: gasRelayHubAddressBytecode
     }); // Charlie accounts[2] is the owner
     let gasRelayHubAddressInstance = new web3.eth.Contract(gasRelayHubAddressAbi, gasRelayHubAddress.contractAddress);
-    gasRelayHubAddressInstance.deploy({
+    await gasRelayHubAddressInstance.deploy({
             data: gasRelayHubAddressBytecode
         })
         .send({
