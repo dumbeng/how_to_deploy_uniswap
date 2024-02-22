@@ -33,7 +33,7 @@ async function deployContract(web3, bytecode, abi, args, from, gasPrice) {
 
 (async () => {
     const data = await get_data();
-    const provider = new HDWalletProvider([data.private_keys.alice, data.private_keys.bob, data.private_keys.charlie], data.provider.rpc_endpoint);
+    const provider = new HDWalletProvider([data.private_key.alice, data.private_key.bob, data.private_key.charlie], data.provider.rpc_endpoint);
     const web3 = new Web3(provider);
     const accounts = await web3.eth.getAccounts();
     const gasPrice = await web3.eth.getGasPrice();
