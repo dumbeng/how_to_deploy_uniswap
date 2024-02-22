@@ -1,6 +1,6 @@
 'use strict';
 const fs = require('fs');
-const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('truffle-hdwallet-provider');
 const Web3 = require("web3");
 
 async function get_data() {
