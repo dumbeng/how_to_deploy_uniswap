@@ -40,6 +40,9 @@ var URL = "";
     const Web3 = require("web3");
     const provider = new HDWalletProvider(privateKeys, URL, 0, 3);
     const web3 = new Web3(provider);
+
+    const gasPrice = web3.eth.getGasPrice();
+
     await web3.eth.net.isListening();
     console.log('Web3 is connected.');
     let accounts = await web3.eth.getAccounts();
@@ -81,7 +84,7 @@ var URL = "";
         .send({
             from: accounts[2],
             gas: 4700000,
-            gasPrice: '30000000000'
+            gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
         })
@@ -123,7 +126,7 @@ var URL = "";
         .send({
             from: accounts[2],
             gas: 4700000,
-            gasPrice: '30000000000'
+            gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
         })
@@ -171,7 +174,7 @@ var URL = "";
         .send({
             from: accounts[2],
             gas: 4700000,
-            gasPrice: '30000000000'
+            gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
         })
@@ -214,8 +217,8 @@ var URL = "";
         })
         .send({
             from: accounts[2],
-            gas: 4700000,
-            gasPrice: '30000000000'
+            gas: 8000000,
+            gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
         })
@@ -251,7 +254,7 @@ var URL = "";
         .send({
             from: accounts[2],
             gas: 4700000,
-            gasPrice: '30000000000'
+            gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
         })
@@ -287,7 +290,7 @@ var URL = "";
         .send({
             from: accounts[2],
             gas: 4700000,
-            gasPrice: '30000000000'
+            gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
         })
@@ -320,7 +323,7 @@ var URL = "";
         .send({
             from: accounts[2],
             gas: 4700000,
-            gasPrice: '30000000000'
+            gasPrice: gasPrice
         }, function(error, transactionHash) {
             console.log(transactionHash);
         })
