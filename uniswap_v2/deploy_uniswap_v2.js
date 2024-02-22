@@ -33,17 +33,17 @@ async function deployContract(web3, bytecode, abi, args, from, gasPrice) {
 
 (async () => {
     const data = await get_data();
-    const provider = new HDWalletProvider([data.private_key.alice, data.private_key.bob, data.private_key.charlie], data.provider.rpc_endpoint);
+    const provider = new HDWalletProvider(data.private_key, data.provider.rpc_endpoint, 0, 3);
     const web3 = new Web3(provider);
     const accounts = await web3.eth.getAccounts();
     const gasPrice = await web3.eth.getGasPrice();
-    const fromAccount = accounts[2]; // Assuming the first account is used for deployment
+    const fromAccount = accounts[2]; // Assuming the third account is used for deployment
 
     // Deploy Uniswap V2 Factory
     const uniswapV2FactoryAddress = await deployContract(
-      web3, data.bytecode.uniswap_v2_factory, data.abi.uniswap_v2_factory, [fromAccount], fromAccount, gasPrice
+      web3, data.bytecode.uniswap_v2, data.abi.uniswap_v2, [fromAccount], fromAccount, gasPrice
     );
-    data.contract_address.uniswap_v2_factory = uniswapV2FactoryAddress;
+    data.contract_address.uniswap_v2 = uniswapV2FactoryAddress;
 
     // Deploy WETH
     const wethAddress = await deployContract(
