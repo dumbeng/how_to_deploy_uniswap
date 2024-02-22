@@ -41,7 +41,7 @@ var URL = "";
     const provider = new HDWalletProvider(privateKeys, URL, 0, 3);
     const web3 = new Web3(provider);
 
-    const gasPrice = web3.eth.getGasPrice();
+    const gasPrice = await web3.eth.getGasPrice();
 
     await web3.eth.net.isListening();
     console.log('Web3 is connected.');
